@@ -1,0 +1,11 @@
+sentence-transformers==2.2.2
+pandas
+scikit-learn
+faiss-cpu
+uvicorn
+fastapi
+python-multipart
+pydantic
+tqdm
+transformers==4.30.2
+huggingface_hub==0.16.4
