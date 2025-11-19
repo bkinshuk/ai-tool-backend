@@ -1,0 +1,9 @@
+sentence-transformers==2.2.2
+pandas
+scikit-learn
+faiss-cpu            # on Linux/Mac; Windows users: pip install faiss-cpu (or conda)
+uvicorn
+fastapi
+python-multipart
+pydantic
+tqdm
