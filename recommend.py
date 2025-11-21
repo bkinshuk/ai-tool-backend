@@ -7,7 +7,7 @@ import faiss
 from pathlib import Path
 import json
 
-OUT_DIR = Path("../data/index_faiss")
+OUT_DIR = Path(__file__).resolve().parent.parent / "data" / "index_faiss"
 EMBED_MODEL = "all-MiniLM-L6-v2"
 
 print("Loading index and metadata...")
