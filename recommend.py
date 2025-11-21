@@ -1,22 +1,21 @@
 # Load model FIRST to avoid macOS Intel segfault
 from sentence_transformers import SentenceTransformer
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
 import numpy as np
 import faiss
 from pathlib import Path
 import json
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "data" / "index_faiss"
-EMBED_MODEL = "all-MiniLM-L6-v2"
+# BASE_DIR = /app  (both on mac and railway)
+BASE_DIR = Path(__file__).resolve().parent.parent
+OUT_DIR = BASE_DIR / "data" / "index_faiss"
 
 print("Loading index and metadata...")
 
 index = faiss.read_index(str(OUT_DIR / "faiss_index.bin"))
 
-# load JSON metadata
 with open(OUT_DIR / "metadata.json", "r", encoding="utf-8") as f:
     meta = json.load(f)
+
 
 prompt_texts = meta["prompt_texts"]
 prompt_tool_idx = meta["prompt_tool_idx"]
